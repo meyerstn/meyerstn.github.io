@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100&family=Lora:ital@1&display=swap');
+
+
+img {
+    border-radius: 15pt;
+}
+
+h2 {
+    text-align: center;
+}
+
+h1 {
+    width: auto;
+    font-family: 'Lora', serif;
+    background-color: teal;
+    color: whitesmoke;
+    border-radius: 25px;
+    padding: 25px;
+    text-align: center;
+    margin-top: 0px;
+}
+
+.content {
+    display: block;
+}
+
+#profile {
+    max-width: 100%;
+    border-radius: 15px;
+    margin-top: 0px;
+}
+
+footer {
+    font-family: 'Lora', serif;
+    text-align: center;
+    background-color: teal;
+    color: whitesmoke;
+    border-radius: 25px;
+    padding: 25px;
+}
+
+footer a:visited {
+    color: whitesmoke;
+}
+
+@media (min-width: 32.5em) {
+    body {
+        font-family: 'Fira Sans', sans-serif;
+    }
+    
+    h1 {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    h2 {
+        text-align: left;
+    }
+
+    .content {
+        display: block;
+        width: auto;
+        margin-left: 30%;
+        margin-right: auto;
+    }
+    
+    #assignments {
+        grid-column: 1;
+    }
+    
+    #profile {
+        max-width: 20%;
+        grid-column: 3;
+        float: left;
+        margin-left: 33em;
+    }
+    
+    footer {
+        width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+}
