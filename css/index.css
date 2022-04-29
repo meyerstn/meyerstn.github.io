@@ -2,7 +2,7 @@
 
 
 img {
-    border-radius: 15pt;
+    border-radius: 25pt;
 }
 
 h2 {
@@ -25,10 +25,10 @@ h1 {
 }
 
 #profile {
-    display:block;
+    display: block;
     margin: auto;
-    max-width: 100%;
     border-radius: 15px;
+   
     
 }
 
@@ -38,6 +38,7 @@ footer {
     background-color: teal;
     color: whitesmoke;
     border-radius: 25px;
+    margin-top: 45px;
     padding: 25px;
 }
 
@@ -74,8 +75,10 @@ footer a:visited {
     #profile {
         max-width: 20%;
         grid-column: 3;
-        float: left;
-        margin-left: 33em;
+        float: right;
+        margin-right: 25em;
+        border-radius: 25px;
+        padding: 15px;
     }
     
     footer {
