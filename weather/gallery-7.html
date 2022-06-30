@@ -1,89 +1,147 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Ponder on Weather</title>
-  <meta name="viewport" content="width-device-width, initial-scale=1.0">
-  <meta name="description" content="Weather Center Assignment">
-  <link rel="stylesheet" href="css/normalize.css"> 
-  <link rel="stylesheet" href="css/template.css">
-  <link rel="stylesheet" href="css/preston.css">
-  <link rel="stylesheet" href="css/medium.css"  media="(min-width:520px)">
-  <link rel="stylesheet" href="css/preston-medium.css"  media="(min-width:520px)">
-  <link rel="stylesheet" href="css/large.css"  media="(min-width:960px)">
-  <link rel="stylesheet" href="css/preston-large.css"  media="(min-width:960px)">
-  <script src="js/scripts.js" defer></script>
-  <script src="js/preston.js" defer></script>
-</head>
+<!doctype html>
 
-<body>
+<html lang="en-us">
 
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image Gallery</title>
+    <meta name="author" content="Tristan Meyers">
+    <meta name="description" content="Weather Image Gallery - Ponder-On-Weather.com">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+  </head>
 
-  <header>
-    <div class="logo-box">
-      <a href="w-index.html">
-        <img id="logo" src="images/Weather-logo.jpeg" alt="weather logo" width="175"/>
-        </a>
-        <section id="title">
-          <h1>Ponder on Weather POW</h1>
-          <h3>Weather When It Matters</h3>
-        </section>
-    </div>
-  </header>
-
-
-
-    <nav>
-      <ul class="navigation">
-          <li><a href="#" onclick="toggleMenu()">Menu</a></li>
-          <li><a href="w-index.html">Home</a></li>
-          <li><a href="preston.html">Preston</a></li>
-          <li><a href="soda-springs.html">Soda Springs</a></li>
-          <li><a href="fish-haven.html">Fish Haven</a></li>
-          <li><a href="stormcenter.html">Storm Center</a></li>
-          <li><a href="gallery-7.html">Gallery</a></li>
-          
-      </ul>
-    </nav>
-
-<main>    
- 
-</main>  
-
-      <div class="contact-info-grid">
-        <div class="contact-section-1">
-            <h4>Contact Information</h4>
-            <p>&#9755; 123 Main Street, Preston, ID</p>
-            <p>&#9742; 208-555-1000</p>
-            <p>&#128231; prestonweather@preston.com</p>
+  <body>
+      <header>
+        <div class="logo-box">
+            <img id="logo" src="images/Weather-logo.jpeg" alt="Ponder On Weather  logo"/>
         </div>
-        <div class="contact-section-2">
-            <a href="https://www.Facebook.com" target="_blank">
-              <img src="images/facebook.png" alt="Facebook">
-            </a>
-            
-            <a href="https://www.Instagram.com" target="_blank">
-              <img src="images/instagram.png" alt="Instagram">
-            </a>
-            
-            <a href="https://www.YouTube.com" target="_blank">
-              <img src="images/youtube.png" alt="YouTube">  
-            </a>
+        <div class="title">
+            <h1>Ponder On Weather </h1>
+            <h2>Forecast and Events</h2>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a class="toggle" onclick="toggleMenu()" href="#">&#9776; Menu</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="preston.html">Preston</a></li>
+                <li><a href="sodasprings.html">Soda Springs</a></li>
+                <li><a href="fishhaven.html">Fish Haven</a></li>
+                <li><a href="stormcenter.html">Storm Center</a></li>
+                <li><a href="#" class="active">Gallery</a></li>
+            </ul>
+        </nav>
+      </header>
 
+      <main>
+        <div class="content-grid">
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/clouds.png" width="200"
+              alt="Clouds"
+            />
+            <hr />
+            <figcaption>Sun breaking through the clouds.</figcaption>
+          </figure>
 
-            
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/dusk-lightning.png" width="200"
+              alt="Lightening at dusk"
+            />
+            <hr />
+            <figcaption>Lightening at dusk</figcaption>
+          </figure>
+
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/lightning-sunset.jpeg" width="200"
+              alt="Lightening in the dark"
+            />
+            <hr />
+            <figcaption>Lightening in the dark</figcaption>
+          </figure>
+
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/mountain-mist.png" width="200"
+              alt="Mountain mist"
+            />
+            <hr />
+            <figcaption>Mountain Mist</figcaption>
+          </figure>
+
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/rain.png" width="200"
+              alt="Downpour"
+            />
+            <hr />
+            <figcaption>Heavy Rain</figcaption>
+          </figure>
+
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/rainbow-river.jpeg" width="200"
+              alt="Rainbow"
+            />
+            <hr />
+            <figcaption>Double Rainbow</figcaption>
+          </figure>
+
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/heavySnow.png" width="200"
+              alt="Snow"
+            />
+            <hr />
+            <figcaption>Heavy Snowfall</figcaption>
+          </figure>
+
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/thunderstorm.jpeg" width="200"
+              alt="Thunderstorm"
+            />
+            <hr />
+            <figcaption>Thunderstorm</figcaption>
+          </figure>
+
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/tornado.png" width="200"
+              alt="Tornado"
+            />
+            <hr />
+            <figcaption>Tornado and lightening</figcaption>
+          </figure>
+
+        </div>
+      </main>
+
+      <footer>
+        <section class="info">
+          <img src="images/map.jpeg" alt="area map">
+          <div class="contact">
+            <h3>Get in Touch</h3><hr>
+            <ul>
+              <li>Email: weather@Ponder-On-Weather .com</li>
+              <li>Phone: 208-555-8734</li>
+            </ul>
+            <p>442 Main St<br>Preston, ID 83263</p>
           </div>
+        </section>
+        <div class="bar">
+          <p id="copy">&#169; <span id="year"></span> | Ponder On Weather  - Weather Channel | Tristan Meyers | <a href="https://www.byui.edu/online">WDD 230</a> | Forcast by <a href="https://openweathermap.org/">OpenWeather</a></p>
+          <p id="updated"></p>
+        </div>
+      </footer>
+  
+      <script src="js/scripts.js"></script>
+      <script src="js/lazyload.js"></script>
+  </body>
 
-          <div class="contact-section-3">
-              <p>Location</p>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23682.885435505068!2d-111.8978345390312!3d42.09974561912451!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8754f78c7cda6c31%3A0xf1b3b4fc465a4a3f!2sPreston%2C%20ID%2083263!5e0!3m2!1sen!2sus!4v1651325337840!5m2!1sen!2sus" width="300" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-          </div>
-    </div>
-  <footer>
-    <p>&copy; <span id="currentYear"></span> | Tristan Meyers | <a href="https://www.byui.edu/online">BYU-Idaho Online Learning</a></p>
-    <p id="date">Last Updated: <span id="updatedDate"></span></p>
-  </footer>
-  <script src="js/script.js"></script>
-
-</body>
-</html>  
+  </html>

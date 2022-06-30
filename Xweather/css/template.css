@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:wght@100&family=Lora:ital@1&display=swap');
+
+/* Colors */
+:root {
+    --primary-color: orangered;
+    --secondary-color: skyblue;
+    --terciary-color: navy;
+ 
+}
+header, footer {
+    min-height: 6rem; 
+    background-color: var(--primary-color);
+    color: var(--terciary-color)
+}
+
+h2 {
+    text-align: center;
+  }
+
+.navigation {
+    display: flex;
+}
+
+.navigation li:first-child{
+    display: none;
+}
+
+.navigation li {
+    display: block;
+    flex: 1 1 100%;
+}
+
+.logo-box {
+    display: grid;
+    grid-template-columns: 15% 75%;
+    width: auto;
+    font-family: 'Lora', serif;
+  
+    text-align: center;
+    padding: 25px;
+  }
+
+#logo {
+    border-radius: 50px 50px 50px 50px;
+   
+ 
+
+}
+h1 {
+
+    text-align: left;
+    margin-top: 15px;
+}
+
+
+
+
+main {
+	max-width: auto;
+	margin: 0 auto;
+	display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+	font-size: 0.8rem;
+}
+
+
+main section h2 {
+	color: var(--terciary-color);
+}
+
+main section {
+	margin: 10px;
+	border: 1px solid skyblue;
+	padding: 0 1rem;
+	background-color: skyblue;
+}
+main section:nth-child(3) {
+    grid-column: span 1;
+    align-items: center;
+}
+
+#home-preston, #home-soda, #home-fish{
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color:#75CBE8;
+    max-width: 600px;
+  
+    
+}
+#home-preston img, #home-soda img, #home-fish img{
+    max-width: 100%;
+    margin-bottom: 15px;
+}
+#home-preston h2, #home-soda h2, #home-fish h2{
+    border-bottom: 3px solid #000000;
+    padding:1rem;
+    display: inline-block;
+    margin-bottom: 0px;
+    text-align: center;
+}
+#home-preston h3, #home-soda h3, #home-fish h3{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+#preston-content, #soda-content, #fish-content{
+    margin-bottom: 2rem;
+    text-align: center;
+}
+main a{
+    text-decoration: none;
+    color: black;
+}
+
+.home-img {
+	box-shadow: 0 0 30px #333;
+    padding: 5px;
+ }
+
+
+footer {
+    width: auto;
+    font-family: 'Lora', serif;
+    text-align: center;
+  
+    border-radius: 25px;
+    margin-top: 25px;
+    margin-right: 2px;
+    padding: 15px;
+    font-size: .75em;
+        
+}
+
+footer a:visited {
+    color: whitesmoke;
+}
+
+.contact-info-grid {
+    width: 600px;
+}
+.contact-section-3 {
+    padding: 15px;
+}

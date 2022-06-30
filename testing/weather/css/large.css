@@ -1,0 +1,26 @@
+@media only screen and (min-width: 65em) {
+    main, .info, .content-grid, .towns {
+        max-width: 1400px;
+        margin: auto;
+   }
+    .content-grid, .towns {
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+   }
+    .town {
+        width: 400px;
+   }
+    .gallery:hover {
+        box-shadow: 0 0 50px #999;
+   }
+    .town {
+        grid-template-columns: 1fr;
+   }
+    .town:nth-child(odd) .stats, .town:nth-child(even) .stats{
+        grid-column: initial;
+   }
+    .town:nth-child(odd) img, .town:nth-child(even) img {
+        grid-row: initial;
+        grid-column: initial;
+   }
+}

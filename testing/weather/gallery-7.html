@@ -1,0 +1,147 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Image Gallery</title>
+    <meta name="author" content="Tristan Meyers">
+    <meta name="description" content="Weather Image Gallery - Ponder-On-Weather.com">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+  </head>
+
+  <body>
+      <header>
+        <div class="logo-box">
+            <img id="logo" src="images/Weather-logo.jpeg" alt="Ponder On Weather  logo"/>
+        </div>
+        <div class="title">
+            <h1>Ponder On Weather </h1>
+            <h2>Forecast and Events</h2>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a class="toggle" onclick="toggleMenu()" href="#">&#9776; Menu</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="preston.html">Preston</a></li>
+                <li><a href="sodasprings.html">Soda Springs</a></li>
+                <li><a href="fishhaven.html">Fish Haven</a></li>
+                <li><a href="stormcenter.html">Storm Center</a></li>
+                <li><a href="#" class="active">Gallery</a></li>
+            </ul>
+        </nav>
+      </header>
+
+      <main>
+        <div class="content-grid">
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/clouds.png" width="200"
+              alt="Clouds"
+            />
+            <hr />
+            <figcaption>Sun breaking through the clouds.</figcaption>
+          </figure>
+
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/dusk-lightning.png" width="200"
+              alt="Lightening at dusk"
+            />
+            <hr />
+            <figcaption>Lightening at dusk</figcaption>
+          </figure>
+
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/lightning-sunset.jpeg" width="200"
+              alt="Lightening in the dark"
+            />
+            <hr />
+            <figcaption>Lightening in the dark</figcaption>
+          </figure>
+
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/mountain-mist.png" width="200"
+              alt="Mountain mist"
+            />
+            <hr />
+            <figcaption>Mountain Mist</figcaption>
+          </figure>
+
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/rain.png" width="200"
+              alt="Downpour"
+            />
+            <hr />
+            <figcaption>Heavy Rain</figcaption>
+          </figure>
+
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/rainbow-river.jpeg" width="200"
+              alt="Rainbow"
+            />
+            <hr />
+            <figcaption>Double Rainbow</figcaption>
+          </figure>
+
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/heavySnow.png" width="200"
+              alt="Snow"
+            />
+            <hr />
+            <figcaption>Heavy Snowfall</figcaption>
+          </figure>
+
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/thunderstorm.jpeg" width="200"
+              alt="Thunderstorm"
+            />
+            <hr />
+            <figcaption>Thunderstorm</figcaption>
+          </figure>
+
+          <figure class="gallery">
+            <img
+              src="images/placeholder.jpg" data-src="images/tornado.png" width="200"
+              alt="Tornado"
+            />
+            <hr />
+            <figcaption>Tornado and lightening</figcaption>
+          </figure>
+
+        </div>
+      </main>
+
+      <footer>
+        <section class="info">
+          <img src="images/map.jpeg" alt="area map">
+          <div class="contact">
+            <h3>Get in Touch</h3><hr>
+            <ul>
+              <li>Email: weather@Ponder-On-Weather .com</li>
+              <li>Phone: 208-555-8734</li>
+            </ul>
+            <p>442 Main St<br>Preston, ID 83263</p>
+          </div>
+        </section>
+        <div class="bar">
+          <p id="copy">&#169; <span id="year"></span> | Ponder On Weather  - Weather Channel | Tristan Meyers | <a href="https://www.byui.edu/online">WDD 230</a> | Forcast by <a href="https://openweathermap.org/">OpenWeather</a></p>
+          <p id="updated"></p>
+        </div>
+      </footer>
+  
+      <script src="js/scripts.js"></script>
+      <script src="js/lazyload.js"></script>
+  </body>
+
+  </html>
