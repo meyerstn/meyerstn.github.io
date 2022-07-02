@@ -1,68 +1,110 @@
-// Banner Ad:
-let date = new Date();
-let dayOfWeek = date.toLocaleDateString("en", {weekday: "long"});
+const active = document.querySelector(".active").textContent;
 
-function bannerAd() {
-    document.querySelector(".banner-ad").style.display = "block";
-}
+fetch(infoURL)
+    .then((response) => response.json())
+    .then((jsObject) => {
 
-if (dayOfWeek == "Friday") {
-    bannerAd();
-}
+        towns = jsObject.towns.filter(function(town) {return town.name == "Preston" || town.name == "Soda Springs" || town.name == "Fish Haven"});
 
-
-//Get town data from API:
-const apiURL = "https://api.openweathermap.org/data/2.5/weather?id=5604473&appid=74931a27fd930b4c0759da539d3eb770";
-
-fetch(apiURL)
-  .then((response) => response.json())
-  .then((jsObject) => {
-    //Display Weather Summary:
-    document.querySelector("#current-condition").textContent = jsObject.weather[0].description;
-    let tempInF = (jsObject.main.temp - 273.15) * 9/5 + 32;
-    document.querySelector("#temperature").textContent = (Math.round(tempInF * 10) / 10);
-    document.querySelector("#humidity").textContent = jsObject.main.humidity;
-    document.querySelector("#wind-speed").textContent = jsObject.wind.speed;
-});
+        if (active == "Home") {
+            towns.reverse().forEach(townInfo);
+        } else {
+            events(towns);
+        }
+    });
 
 
-//Town Forecast:
-const forecastApi = "https://api.openweathermap.org/data/2.5/forecast?lat=42.0963&lon=-111.8766&appid=74931a27fd930b4c0759da539d3eb770";
-fetch(forecastApi)
-  .then((response) => response.json())
-  .then((forecast) => {
+    function townInfo(town) {
+        const article = document.createElement("article");
+        article.className = "town";
+
+        const section = document.createElement("section");
+        const h2 = document.createElement("h2");
+        h2.textContent = town.name;
+        const h3 = document.createElement("h3");
+        h3.textContent = town.motto;
+
+        section.appendChild(h2);
+        section.appendChild(h3);
+
+        const labels = document.createElement("ul");
+        labels.className = "labels";
+        const founded = document.createElement("li");
+        founded.textContent = "Founded:";
+        const population = document.createElement("li");
+        population.textContent = "Population:";
+        const rainfall = document.createElement("li");
+        rainfall.textContent = "Annual Rain Fall:";
     
-    let timeFilteredData = forecast.list.filter(item =>  item["dt_txt"].includes("18:00:00"));
-    let currentDate = new Date();
+        labels.appendChild(founded);
+        labels.appendChild(population);
+        labels.appendChild(rainfall);
     
-    for (let i = 1; i <= timeFilteredData.length; i++ ) {      
-      let day = new Date(currentDate.getTime() + i * 24 * 60 * 60 * 1000);
-      outputDailyForecast(day, i, timeFilteredData);
+        const values = document.createElement("ul");
+        values.className = "values";
+        const foundedValue = document.createElement("li");
+        foundedValue.textContent = town.yearFounded;
+        const popValue = document.createElement("li");
+        popValue.textContent = town.currentPopulation;
+        const rainfallValue = document.createElement("li");
+        rainfallValue.textContent = town.averageRainfall+'"';
+
+        values.appendChild(foundedValue);
+        values.appendChild(popValue);
+        values.appendChild(rainfallValue);
+
+        const stats = document.createElement("div");
+        stats.className = "stats";
+
+        stats.appendChild(labels);
+        stats.appendChild(values);
+    
+        const img =  document.createElement("img");
+        img.src = "images/" + town.photo;
+        img.alt = town.name;
+    
+        article.appendChild(section);
+        article.appendChild(stats);
+        article.appendChild(img);
+    
+        document.querySelector('.towns').appendChild(article);
+    
     }
 
-    function outputDailyForecast(day, i, timeFilteredData) {
-      document.querySelector(`#day${i}-name`).textContent = day.toLocaleDateString("en", {weekday: "long"});
-      const imagesrc = "http://openweathermap.org/img/wn/" + timeFilteredData[i-1].weather[0].icon + ".png";
-      document.querySelector(`#day${i}-img`).setAttribute("src", imagesrc);
-      let convertedTemp = (timeFilteredData[i-1].main.temp - 273.15) * 9/5 + 32;
-      document.querySelector(`#day${i}-data`).textContent = (Math.round(convertedTemp * 10) / 10)  + " °F";
+
+    function events(towns) {
+        let town = towns.filter(function(town) {return town.name == active});
+
+        if (town[0].events.length > 0) {
+            const EventInfo = document.querySelector('.townEvents');
+
+            const title = document.createElement("h3");
+            title.textContent = "Annual Events";
+        
+            const dates = document.createElement("ul");
+            dates.className = "labels";
+    
+            const Events = document.createElement("ul");
+            Events.className = "values";
+
+            EventInfo.appendChild(title);
+            EventInfo.appendChild(dates);
+            EventInfo.appendChild(Events);
+    
+            town[0].events.forEach( function(event) {
+                let broken = event.split(": ");
+    
+                const date = document.createElement("li");
+                date.textContent = broken[0]+":";
+        
+                const description = document.createElement("li");
+                description.textContent = broken[1];
+                
+                dates.appendChild(date);
+                Events.appendChild(description);
+            });
+        } else {
+            return false;
+        }
     }
-});
 
-
-// Calculate windchill:
-//formula: f = 35.74 + 0.6215t - 35.75 (s^0.16) + 0.4275t(s^0.16)
-
-const temperature = parseInt(document.querySelector("#temperature").textContent);
-const windSpeed = parseInt(document.querySelector("#wind-speed").textContent);
-
-function computeWindChill (temp, speed) {
-    return Math.round(35.74 + 0.6215 * temp - 35.75 * (speed ** 0.16) + 0.4275 * temp * (speed ** 0.16))
-};
-
-if (temperature <= 50 && windSpeed > 3) {
-    document.querySelector("#wind-chill").textContent = `${computeWindChill(temperature, windSpeed)} °F`;
-} 
-else {
-    document.querySelector("#wind-chill").textContent = "N/A";
-}
