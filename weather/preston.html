@@ -1,0 +1,156 @@
+<!doctype html>
+
+<html lang="en-us">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ponder On Weather - Weather Channel</title>
+    <meta name="author" content="Tristan Meyers">
+    <meta name="description" content="Preston, ID weather and events - Weather-Now.com">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/small.css">
+    <link rel="stylesheet" href="css/medium.css">
+    <link rel="stylesheet" href="css/large.css">
+  </head>
+
+  <body>
+      
+      <header>
+        <div class="logo-box">
+            <img id="logo" src="images/Weather-logo.jpeg" alt="Ponder On Weather logo"/>
+        </div>
+        <div class="title">
+            <h1>Ponder On Weather</h1>
+            <h2>Forecast and Events</h2>
+        </div>
+        <nav>
+            <ul class="menu">
+                <li><a class="toggle" onclick="toggleMenu()" href="#">&#9776; Menu</a></li>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="preston.html">Preston</a></li>
+                <li><a href="sodasprings.html">Soda Springs</a></li>
+                <li><a href="fishhaven.html">Fish Haven</a></li>
+                <li><a href="stormcenter.html">Storm Center</a></li>
+                <li><a href="gallery-7.html">Gallery</a></li>
+            </ul>
+        </nav>
+      </header>
+
+      <main>
+        <section class="banner">
+          <picture>
+            <source media="(min-width:600px) and (max-width: 999px)" srcset="images/preston-med.jpg">
+            <source media="(min-width: 1000px)" srcset="images/preston-large.jpg">
+            <img src="images/prestonHome.jpeg" alt="Preston, ID landscape" style="width:100%;">
+          </picture>
+          <div class="summary">
+            <h3>Weather Summary</h3>
+            <span id="description">-</span>
+            <img id="todayimg" src="#" alt="-">
+              <ul class="labels">
+                <li></li>
+                <li>Currently:</li>
+                <li>Wind Chill:</li>
+                <li>Humidity:</li>
+                <li>Wind Speed:</li>
+              </ul>
+              <ul class="values">
+                <li><span id="temp">38</span>&#730;F</li>
+                <li><span id="chill"></span></li>
+                <li><span id="humidity"></span>%</li>
+                <li><span id="wind">5</span>&nbsp;mph</li>
+              </ul>
+          </div>
+        </section>
+        <section class="forcast">
+          <h3>5 Day Forcast</h3>
+          <div id="forcast" class="flex">
+            <div class="five-days">
+              <h4 class="weekday">-</h4>
+              <img id="day1img" alt="-" src="#"><br>
+              <span id="day1temp"></span>&#730;F                                                                                                                   
+            </div>
+            <div class="five-days">
+              <h4 class="weekday">-</h4>
+              <img id="day2img" alt="-" src="#"><br>
+              <span id="day2temp"></span>&#730;F 
+            </div>
+            <div class="five-days">
+              <h4 class="weekday">-</h4>
+              <img id="day3img" alt="-" src="#"><br>
+              <span id="day3temp"></span>&#730;F 
+            </div>
+            <div class="five-days">
+              <h4 class="weekday">-</h4>
+              <img id="day4img" alt="-" src="#"><br>
+              <span id="day4temp"></span>&#730;F 
+            </div>
+            <div class="five-days">
+              <h4 class="weekday">-</h4>
+              <img id="day5img" alt="-" src="#"><br>
+              <span id="day5temp"></span>&#730;F 
+            </div>
+          </div>
+        </section>
+        <section class="townEvents">
+        </section>
+        <article class="left">
+          <h2>Treasure Map Found At Dig Site</h2>
+          <img alt="Preston Rodeo" src="images/butch.jpg"/>
+
+          <p>Preston, Idaho is known for two things; Napoleon Dynamite, and potatoes. However, after the discovery
+            of a treasure map was found by a construction worker preparing the ground for the new Preston
+            Aquatic Center three weeks ago on a Tuesday afternoon, perhaps Preston will be known for three
+            things. Jim Brigham was doing some digging when he noticed an old bottle that looked like it had
+            something inside. Upon closer inspection, he realized he had found a map. Lucky for him his wife, Barbra
+            Brigham, has an interest in cartography and was able to identify that the map was of the surrounding
+            area and seemed to lead to a treasure. She says,</p>
+
+          <blockquote><i>“Just below the map is an inscription that, after carefully examining, seems to say B.
+            Cassidy Insurance Policy. We believe that this could be a map that leads to some
+            treasure that Cassidy may have stashed away for a rainy day.”</i></blockquote>
+          
+          <p>After Mrs. Brigham realized what her husband had found she took the bottle and map to Utah State to
+            be examined by some visiting professors. Together they were able to deduce that the map and bottle
+            were indeed real. The finding of the map has created a buzz throughout the town that has everyone
+            excited. Mr. Brigham says,</p>
+
+          <blockquote><i>“My kids and their friends have been talking about finding the treasure since I
+            brought it home. It’s caused everyone to get excited about the mystery of the map
+            and if the treasure is still hidden.”</i></blockquote>
+
+          <p>In four weeks the Map is to be put on display for the town to come and see for themselves. Who knows,
+            perhaps some will even seek the adventure that comes with finding buried treasure.</p>
+
+        </article>
+      </main>
+
+        
+      </main>
+
+
+
+      <footer>
+        <section class="info">
+          <img src="images/map.jpeg" alt="area map">
+          <div class="contact">
+            <h3>Get in Touch</h3><hr>
+            <ul>
+              <li>Email: weather@Ponder-On-Weather .com</li>
+              <li>Phone: 208-555-8734</li>
+            </ul>
+            <p>442 Main St<br>Preston, ID 83263</p>
+          </div>
+        </section>
+        <div class="bar">
+          <p id="copy">&#169; <span id="year"></span> | Ponder On Weather  - Weather Channel | Tristan Meyers | <a href="https://www.byui.edu/online">WDD 230</a> | Forcast by <a href="https://openweathermap.org/">OpenWeather</a></p>
+          <p id="updated"></p>
+        </div>
+      </footer>
+  
+      <script src="js/scripts.js"></script>
+      <script src="js/towninfo.js"></script>
+  </body>
+
+  </html>
