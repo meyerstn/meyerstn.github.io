@@ -24,3 +24,15 @@
         grid-column: initial;
    }
 }
+#home-preston h2, #home-soda h2, #home-fish h2{
+    border-bottom: 3px solid #000000;
+    padding:1rem;
+    display: inline-block;
+    margin-bottom: 0px;
+    text-align: center;
+}
+#home-preston h4, #home-soda h4, #home-fish h4{
+    
+    display: inline-block;
+    margin-bottom: 0px;
+    text-align: center;
