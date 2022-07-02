@@ -1,4 +1,4 @@
-const infoURL = 
+const infoURL = https://meyerstn.github/weather/data/towndata.json ;
 const active = document.querySelector(".active").text(Content);
 
 
