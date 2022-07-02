@@ -3,6 +3,10 @@
         max-width: 1400px;
         margin: auto;
    }
+   #logo {
+    border-radius: 50px 50px 50px 50px;
+    align-items: left;
+    }
     .content-grid, .towns {
         grid-template-columns: repeat(3, 1fr);
         grid-gap: 10px;
