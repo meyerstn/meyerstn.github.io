@@ -3,6 +3,11 @@
      font-family: "Akshar", Arial, Helvetica;
      font-size: 1.2em;
 }
+#logo {
+    border-radius: 50px 50px 50px 50px;
+    align-items: left;
+}
+
  #announcement {
      display: none;
      background: #EC4E20;
