@@ -1,5 +1,5 @@
-const infoURL = "https://byui-cit230.github.io/weather/data/towndata.json";
-const active = document.querySelector(".active").textContent;
+const infoURL = 
+const active = document.querySelector(".active").text(Content);
 
 
 fetch(infoURL)
@@ -12,7 +12,7 @@ fetch(infoURL)
             towns.reverse().forEach(townInfo);
         } else {
             events(towns);
-        };
+        }
     });
 
 
@@ -71,14 +71,14 @@ fetch(infoURL)
     
         document.querySelector('.towns').appendChild(article);
     
-    };
+    }
 
 
     function events(towns) {
         let town = towns.filter(function(town) {return town.name == active});
 
         if (town[0].events.length > 0) {
-            const EventInfo = document.querySelector('.townEvents')
+            const EventInfo = document.querySelector('.townEvents');
 
             const title = document.createElement("h3");
             title.textContent = "Annual Events";
@@ -107,6 +107,6 @@ fetch(infoURL)
             });
         } else {
             return false;
-        };
-    };
+        }
+    }
 
