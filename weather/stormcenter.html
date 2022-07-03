@@ -47,7 +47,7 @@
           
     <div class="storm-grid">
 
-    <form action="form.html" method="post">
+    <form action="submit.html" method="post">
               <label for="name">Full name:</label><br>
               <input type="text" id="name" name="name" minlength="5" ><br><br>
 
@@ -58,7 +58,7 @@
               <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br><br>
 
               <label for="zip">Zip code:</label><br>
-              <input type="number" id="zip" name="zip" pattern="[0-9]{5}"><br><br>
+              <input type="number" id="zip" name="zip" ><br><br>
 
               <label for="date">Storm date:</label><br>
               <input type="date" id="date" name="date" value="2022-05-13" min="2022-01-01" max="2100-12-31"><br><br>
@@ -97,7 +97,9 @@
                   Place your additional comments here
               </textarea><br><br>
               
-              <button type="submit"><a href="submit.html">Submit</a></button> 
+              <a href="submit.html" class="button">Submit</a>
+           
+             
               
 
 
