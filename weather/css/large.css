@@ -41,3 +41,15 @@
     margin-bottom: 0px;
     text-align: center;
 }
+
+form {
+    /* Center the form on the page */
+    margin: 50px;
+    width: 500px;
+    /* Form outline */
+    padding: 1em;
+    border: 1px solid #CCC;
+    border-radius: 1em;
+    text-align: left;
+    background-color: rgb(205, 231, 240);
+  }

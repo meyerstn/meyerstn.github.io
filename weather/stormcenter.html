@@ -36,7 +36,79 @@
             </ul>
         </nav>
       </header>
+  <main>
+   
+                    
+      <div class="page-title">
+          <h2>Storm Center</h2>
+      </div>
 
+          
+          
+    <div class="storm-grid">
+
+    <form action="thankyou.html" method="post">
+              <label for="name">Full name:</label><br>
+              <input type="text" id="name" name="name" minlength="5" ><br><br>
+
+              <label for="email">youremail@email.com</label><br>
+              <input type="email" id="email" name="email"><br><br>
+
+              <label for="phone">Phone number:</label><br>
+              <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"><br><br>
+
+              <label for="zip">Zip code:</label><br>
+              <input type="number" id="zip" name="zip" pattern="[0-9]{5}"><br><br>
+
+              <label for="date">Storm date:</label><br>
+              <input type="date" id="date" name="date" value="2022-05-13" min="2022-01-01" max="2100-12-31"><br><br>
+
+              <label for="type">Storm Type</label><br>
+              <select id="type" name="type">
+                  <option value="Flash Flood">Flash Flood</option>
+                  <option value="Thunder_storm">Thunder Storm</option>
+                  <option value="Hail">Hail</option>
+                  <option value="Hurricane">Hurricane</option>
+                  <option value="Tornado">Tornado</option>
+              </select><br><br>
+
+              <label for="severity">Storm Severity (between 1 and 10):</label><br>
+              <input type="range" id="severity" name="severity" min="1" max="10"><br><br>
+
+              <label for="location">Select Region</label><br>
+              <select id="location" name="location">
+                  <option value="preston">Preston</option>
+                  <option value="sodasprings">Soda Springs</option>
+                  <option value="fish-aven">Fish Haven</option>
+              </select><br><br>
+
+              <p>Are you in danger?</p><br>
+                <input type="radio" id="yes" name="danger_level" value="yes">
+                <label for="yes">Yes</label><br>
+                <input type="radio" id="maybe" name="danger_level" value="maybe">
+                <label for="maybe">Maybe</label><br>
+                <input type="radio" id="no" name="danger_level" value="no">
+                <label for="no">No</label>
+              <br><br>
+
+              <label for="aComments">Additional Comments</label><br>
+
+              <textarea id="aComments" name="aComments" rows="4" cols="50">
+                  Place your additional comments here
+              </textarea><br><br>
+
+              <input type="submit" value="submit">
+
+
+
+          </form>
+              
+
+      </div>
+
+
+
+  </main>
 
   <footer>
     <section class="info">
@@ -57,7 +129,7 @@
   </footer>
 
   <script src="js/scripts.js"></script>
-  <script src="js/towninfo.js"></script>
+  
 </body>
 
 </html>
