@@ -4,8 +4,8 @@
         margin: auto;
    }
    #logo {
-    border-radius: 50px 50px 50px 50px;
-    align-items: left;
+        border-radius: 50px 50px 50px 50px;
+    
     }
     .content-grid, .towns {
         grid-template-columns: repeat(3, 1fr);
