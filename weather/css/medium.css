@@ -97,7 +97,7 @@
    }
   }
 
-}
+
 main section:active{
     box-shadow: 0 0 50px #000000;
 }
@@ -122,5 +122,5 @@ main section:active{
     grid-column: 1/2;
     grid-row: 1/2;
 }
-}
+
   
