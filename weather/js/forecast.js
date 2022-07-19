@@ -1,84 +1,181 @@
-//Display the Event announcement if the Day is Friday
-let currentDate = new Date();
-let today = weekdays[currentDate.getDay()];
+//* Get JSON data from OpenWeatherMap
 
-let fivedays = []
+let forecastRequest = new XMLHttpRequest();
+let forecastApiURLstring =
+  "https://api.openweathermap.org/data/2.5/forecast?id=5604473&units=imperial&APPID=0b25c1f6d23d52987a6d10f8c21a31e6";
+forecastRequest.open("Get", forecastApiURLstring, true);
+forecastRequest.send();
 
-const shortNames = ["Sun", "Mon", "Tue", "Wed", "Thur", "Fri", "Sat"]
-for (i = 0; i < 5; i++) {
-    fivedays.push(shortNames[(currentDate.getDay() + i + 1) % 7]);
+//* Function to display five-day forecast days as string rather than integer
+
+function findDayOfWeek(apiDay) {
+  var dayDate = new Date(apiDay);
+  var day = dayDate.getDay();
+  var dayOfWeek;
+  switch (day) {
+    case 0:
+      dayOfWeek = "Sunday";
+      break;
+    case 1:
+      dayOfWeek = "Monday";
+      break;
+    case 2:
+      dayOfWeek = "Tuesday";
+      break;
+    case 3:
+      dayOfWeek = "Wednesday";
+      break;
+    case 4:
+      dayOfWeek = "Thursday";
+      break;
+    case 5:
+      dayOfWeek = "Friday";
+      break;
+    case 6:
+      dayOfWeek = "Saturday";
+      break;
+    default:
+      break;
+  }
+  return dayOfWeek;
 }
 
-if (today == "Friday") {
-    document.getElementById("announcement").style.display = "block";
-}
+forecastRequest.onload = function () {
+  let forecastData = JSON.parse(forecastRequest.responseText);
+  console.log(forecastData);
 
-const apiKey = "a6ce570f8b96f7a0437a5c9479fe91c7";
+  var imageWeather = "https://openweathermap.org/img/w/";
+  var forecastArray = forecastData.list;
+  var dayOne, dayTwo, dayThree, dayFour, dayFive;
+  var z = 0;
 
-city = document.querySelector(".active").innerHTML;
+  for (var i = 0; i < forecastArray.length; i++) {
+    var x = forecastData.list[i].dt_txt;
+    var y = x.includes("18:00:00");
+    if (y == true) {
+      switch (z) {
+        case 0:
+          dayOne = forecastData.list[i];
+          break;
+        case 1:
+          dayTwo = forecastData.list[i];
+          break;
+        case 2:
+          dayThree = forecastData.list[i];
+          break;
+        case 3:
+          dayFour = forecastData.list[i];
+          break;
+        case 4:
+          dayFive = forecastData.list[i];
+          break;
+        default:
+          break;
+      }
+      z++;
+    }
 
-let cityID = "";
+    document.getElementById("day-1").innerHTML = findDayOfWeek(dayOne.dt_txt);
+    document.getElementById("day-2").innerHTML = findDayOfWeek(dayTwo.dt_txt);
+    document.getElementById("day-3").innerHTML = findDayOfWeek(dayThree.dt_txt);
+    document.getElementById("day-4").innerHTML = findDayOfWeek(dayFour.dt_txt);
+    document.getElementById("day-5").innerHTML = findDayOfWeek(dayFive.dt_txt);
 
-if (city == "Preston") {
-    cityID = "5604473";
-} else if (city == "Fish Haven") {
-    cityID = "5585010";
-} else if (city == "Soda Springs") {
-    cityID = "5607916";
-};
-  
-const fivedayapiURL = "https://api.openweathermap.org/data/2.5/forecast?id="+cityID+"&appid="+apiKey+"&units=imperial";
-const todayapiURL = "https://api.openweathermap.org/data/2.5/weather?id="+cityID+"&appid="+apiKey+"&units=imperial";
-const theForcast = document.getElementById("forcast");
-const theDays = theForcast.children;
+    document.getElementById("high-1").innerHTML =
+      dayOne.main.temp_max + "&deg;";
+    document.getElementById("high-2").innerHTML =
+      dayTwo.main.temp_max + "&deg;";
+    document.getElementById("high-3").innerHTML =
+      dayThree.main.temp_max + "&deg;";
+    document.getElementById("high-4").innerHTML =
+      dayFour.main.temp_max + "&deg;";
+    document.getElementById("high-5").innerHTML =
+      dayFive.main.temp_max + "&deg;";
 
-fetch(fivedayapiURL)
-  .then((response) => response.json())
-  .then((jsObject) => {
+    document
+      .getElementById("img-1")
+      .setAttribute("src", imageWeather + dayOne.weather[0].icon + ".png");
+    document
+      .getElementById("img-2")
+      .setAttribute("src", imageWeather + dayTwo.weather[0].icon + ".png");
+    document
+      .getElementById("img-3")
+      .setAttribute("src", imageWeather + dayThree.weather[0].icon + ".png");
+    document
+      .getElementById("img-4")
+      .setAttribute("src", imageWeather + dayFour.weather[0].icon + ".png");
+    document
+      .getElementById("img-5")
+      .setAttribute("src", imageWeather + dayFive.weather[0].icon + ".png");
 
-    days = jsObject.list.filter(function(day) {return day.dt_txt.includes("18:00:00") });
+    document
+      .getElementById("img-1")
+      .setAttribute("alt", dayOne.weather[0].description);
+    document
+      .getElementById("img-2")
+      .setAttribute("alt", dayOne.weather[0].description);
+    document
+      .getElementById("img-3")
+      .setAttribute("alt", dayOne.weather[0].description);
+    document
+      .getElementById("img-4")
+      .setAttribute("alt", dayOne.weather[0].description);
+    document
+      .getElementById("img-5")
+      .setAttribute("alt", dayOne.weather[0].description);
 
-    for (i = 0; i < theDays.length; i++) {
-        const icon = days[i].weather[0].icon;
-        const alt =  days[i].weather[0].descritpion;
-        const temp =days[i].main.temp_max;
-        const details = theDays[i].children;
-        details[0].innerHTML = fivedays[i];
-        details[1].src ='https://openweathermap.org/img/w/' + icon + '.png';
-        details[1].alt = alt
-        details[3].textContent = parseInt(temp);
-    };
+    document.getElementById("condition-1").innerHTML = dayOne.weather[0].main;
+    document.getElementById("condition-2").innerHTML = dayTwo.weather[0].main;
+    document.getElementById("condition-3").innerHTML = dayThree.weather[0].main;
+    document.getElementById("condition-4").innerHTML = dayFour.weather[0].main;
+    document.getElementById("condition-5").innerHTML = dayFive.weather[0].main;
 
-  });
+    document.getElementById("low-1").innerHTML = dayOne.main.temp_min + "&deg;";
+    document.getElementById("low-2").innerHTML = dayTwo.main.temp_min + "&deg;";
+    document.getElementById("low-3").innerHTML =
+      dayThree.main.temp_min + "&deg;";
+    document.getElementById("low-4").innerHTML =
+      dayFour.main.temp_min + "&deg;";
+    document.getElementById("low-5").innerHTML =
+      dayFive.main.temp_min + "&deg;";
+  }
 
-fetch(todayapiURL)
+  const apiURL =
+    "https://api.openweathermap.org/data/2.5/weather?id=5604473&appid=e681baa04b7db3d01b4b4bb6cfe8420a&units=imperial";
+  fetch(apiURL)
     .then((response) => response.json())
     .then((jsObject) => {
+      console.log(jsObject);
+      const temp = (document.querySelector("#temp").textContent =
+        jsObject.main.temp.toFixed(1));
 
-        const current = jsObject.main.temp;
-        const windspeed = jsObject.wind.speed;
-        const humidity = jsObject.main.humidity;
-        const summary = jsObject.weather[0].description;
-        const icon = jsObject.weather[0].icon;
+      const iconsrc = `https://openweathermap.org/img/w/${jsObject.weather[0].icon}.png`;
+      const desc = jsObject.weather[0].description;
+      const wspeed = jsObject.wind.speed;
+      const humid = jsObject.main.humidity;
+      document.querySelector("#weathericon").setAttribute("src", iconsrc);
+      document.querySelector("#weathericon").setAttribute("alt", desc);
+      document.querySelector("figcaption").textContent = desc;
+      document.querySelector("#speed").textContent = wspeed;
+      document.querySelector("#humid").textContent = humid;
+      let wchill = "";
 
-        chill = chillfactor(temp, windspeed);
-        document.getElementById('temp').textContent = parseInt(current);
-        document.getElementById('wind').textContent = parseInt(windspeed);
-        document.getElementById('humidity').textContent = humidity;
-        document.getElementById('chill').innerHTML = chill;
-        document.getElementById('description').textContent = summary;
-        document.getElementById('todayimg').src = 'https://openweathermap.org/img/w/' + icon + '.png';
+      if (temp <= 50 && wspeed > 3) {
+        wchill = windchill(temp, wspeed);
+        wchill = `${wchill}&deg;F`;
+      } else {
+        wchill = "N/A";
+      }
+
+      document.querySelector("#wchill").innerHTML = wchill;
+
+      function windchill(temp, wspeed) {
+        windchill =
+          35.74 +
+          0.6215 * temp -
+          35.75 * Math.pow(wspeed, 0.16) +
+          0.4275 * temp * Math.pow(wspeed, 0.16);
+        return windchill.toFixed(1);
+      }
     });
-
-
-function chillfactor(temp, windspeed) {
-  let windChill = ""
-  if (temp < 51 && windspeed > 2.9) {
-    const speed = windspeed**0.16;
-    let windchill = 35.74 + 0.6215 * temp - 35.75 * speed + 0.4275 * temp * speed;
-        windChill = Math.round(windchill) + "&#730;F";
-  } else {
-        windChill = "N/A";
-  };
-  return windChill;
 };

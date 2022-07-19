@@ -76,6 +76,11 @@
         grid-template-columns: 1fr;
         grid-gap: 10px;
    }
+   
+    .gallery-grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10px; 
+   }
     .town {
         grid-template-columns: 1fr 1fr;
         width: 860px;
