@@ -43,54 +43,49 @@
            <!-- <img alt="Mountains" src="images/Mountain-mist.png" width="200"/> -->
             <p>Labor day is going to be gorgeous, with highs in the mid 70s and not a storm in sight. </p>
         </article>
-        
-        <section class="towns">
+        <main>
           <section id="home-preston">
-            <a href="preston.html"></a>
+            <a href="preston.html">
               <div id="preston-content">
-                <h2>Preston</h2>
-                <br>
-                <h4>Home of Napoleon Dynamite</h4>
-                <p>Year Founded: 1866</p>
-                <p>Population: 5206 </p>
-                <p>Annual Rainfall: 16.65</p>
+                <h2 id="preston-name"></h2>
+                <h3 id="preston-slogan"></h3>
+                <p>Year Founded: <span id="preston-year"></span></p>
+                <p>Population: <span id="preston-pop"></span></p>
+                <p>Annual Rainfall: <span id="preston-rain"></span></p>
               </div>
-              <picture>
-                  <img class="home-img" src="images/card-preston.jpg" alt="Preston Idaho Scenery" width= 375>
-              </picture>
-            
-          </section>  
-          <section id="home-fish"> 
-            <a href="fish-haven.html"> </a>
-              <div id="fish-content">
-                <h2>Fish Haven</h2>
-                <br>
-                <h4>This is Fish Haven</h4>
-                <p>Year Founded: 1864</p>
-                <p>Population: 501 </p>
-                <p>Annual Rainfall: 14.2 </p>
+              <div id="preston-picture">
+                <img id="preston-img" src="images/card-preston.jpg" alt="" />
               </div>
-              <picture>
-                  <img class="home-img" src="images/fish-haven.jpg" alt="Fish Haven picture" width= 375>
-              </picture>
+            </a>
           </section>
-        
           <section id="home-soda">
-            <a href="sodasprings.html"> </a>
+            <a href="soda-springs.html">
               <div id="soda-content">
-                <h2>Soda Springs</h2>
-                <h4>Historic Oregon Trail Oasis.</h4>
-                <h4> The Soda is on us. </h4>
-                <p>Year Founded: 1858</p>
-                <p>Population: 2985 </p>
-                <p>Annual Rainfall: 15.75</p>
+                <h2 id="soda-name"></h2>
+                <h3 id="soda-slogan"></h3>
+                <p>Year Founded: <span id="soda-year"></span></p>
+                <p>Population: <span id="soda-pop"></span></p>
+                <p>Annual Rainfall: <span id="soda-rain"></span></p>
               </div>
-              <picture>
-                <img class="home-img" src="images/soda-springs.jpg" alt="gyser" width= 365>
-              </picture>
-            
+              <div id="soda-picture">
+                <img id="soda-img" src="images/soda-springs-large.jpg" alt="" />
+              </div>
+            </a>
           </section>
-        </section>
+          <section id="home-fish">
+            <a href="fish-haven.html">
+            <div id="fish-content">
+              <h2 id="fish-name"></h2>
+              <h3 id="fish-slogan"></h3>
+              <p>Year Founded: <span id="fish-year"></span></p>
+              <p>Population: <span id="fish-pop"></span></p>
+              <p>Annual Rainfall: <span id="fish-rain"></span></p>
+            </div>
+            <div id="fish-picture">
+              <img id="fish-img" src="images/fish-haven-large.jpg" alt="" />
+            </div>
+            </a>
+          </section>
       </main>
 
       <footer>
@@ -112,7 +107,7 @@
       </footer>
   
       <script src="js/scripts.js"></script>
-      <script src="js/towninfo.js"></script>
+      <script src="js/town-info.js"></script>
   </body>
 
   </html>

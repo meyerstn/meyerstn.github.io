@@ -36,7 +36,64 @@
             </ul>
         </nav>
       </header>
-
+      <main>
+        <section class="banner">
+          <picture>
+            <source media="(min-width:600px) and (max-width: 999px)" srcset="images/fish-haven-med.jpg">
+            <source media="(min-width: 1000px)" srcset="images/fish-haven-large.jpg">
+            <img src="images/fish-haven.jpg" alt="Fish Haven landscape" style="width:100%;">
+          </picture>
+          <div class="summary">
+            <h3>Weather Summary</h3>
+            
+              <ul class="labels">
+                <li></li>
+                <li>Currently:</li>
+                <li>Wind Chill:</li>
+                <li>Humidity:</li>
+                <li>Wind Speed:</li>
+              </ul>
+              <ul class="values">
+                <li><span id="temp">38</span>&#730;F</li>
+                <li><span id="chill"></span></li>
+                <li><span id="humidity"></span>%</li>
+                <li><span id="wind">5</span>&nbsp;mph</li>
+              </ul>
+          </div>
+        </section>
+        <section class="forcast">
+          <h3>5 Day Forcast</h3>
+          <div id="forcast" class="flex">
+            <div class="five-days">
+              <h4 class="weekday">-</h4>
+              <img id="day1img" alt="-" src="#"><br>
+              <span id="day1temp"></span>&#730;F                                                                                                                   
+            </div>
+            <div class="five-days">
+              <h4 class="weekday">-</h4>
+              <img id="day2img" alt="-" src="#"><br>
+              <span id="day2temp"></span>&#730;F 
+            </div>
+            <div class="five-days">
+              <h4 class="weekday">-</h4>
+              <img id="day3img" alt="-" src="#"><br>
+              <span id="day3temp"></span>&#730;F 
+            </div>
+            <div class="five-days">
+              <h4 class="weekday">-</h4>
+              <img id="day4img" alt="-" src="#"><br>
+              <span id="day4temp"></span>&#730;F 
+            </div>
+            <div class="five-days">
+              <h4 class="weekday">-</h4>
+              <img id="day5img" alt="-" src="#"><br>
+              <span id="day5temp"></span>&#730;F 
+            </div>
+          </div>
+        </section>
+        
+        
+      </main>
 
   <footer>
     <section class="info">

@@ -96,4 +96,31 @@
         grid-column: 1/2;
    }
   }
+
+}
+main section:active{
+    box-shadow: 0 0 50px #000000;
+}
+#home-preston a, #home-fish a{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#home-preston, #home-fish, #home-soda{
+    max-width: fit-content;
+    padding-left: 15px;
+}
+#home-soda a{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+#soda-content{
+    grid-column: 2/3;
+    grid-row: 1/2;
+    padding-left: 15px;
+}
+#soda-picture{
+    grid-column: 1/2;
+    grid-row: 1/2;
+}
+}
   

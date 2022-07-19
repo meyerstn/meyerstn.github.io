@@ -7,40 +7,7 @@
         border-radius: 50px 50px 50px 50px;
     
     }
-    .content-grid, .towns {
-        grid-template-columns: repeat(3, 1fr);
-        grid-gap: 10px;
-   }
-    .town {
-        width: 400px;
-   }
-    .gallery:hover {
-        box-shadow: 0 0 50px #999;
-   }
-    .town {
-        grid-template-columns: 1fr;
-   }
-    .town:nth-child(odd) .stats, .town:nth-child(even) .stats{
-        grid-column: initial;
-   }
-    .town:nth-child(odd) img, .town:nth-child(even) img {
-        grid-row: initial;
-        grid-column: initial;
-   }
-}
-#home-preston h2, #home-soda h2, #home-fish h2{
-    border-bottom: 3px solid #000000;
-    padding:1rem;
-    display: inline-block;
-    margin-bottom: 0px;
-    text-align: center;
-}
-#home-preston h4, #home-soda h4, #home-fish h4{
-    
-    display: inline-block;
-    margin-bottom: 0px;
-    text-align: center;
-}
+
 
 form {
     /* Center the form on the page */
@@ -53,4 +20,32 @@ form {
     text-align: left;
     background-color: rgb(205, 231, 240);
   }
- 
+
+}#home-preston, #home-soda, #home-fish{
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background-color:#75CBE8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+#home-preston img, #home-soda img, #home-fish img{
+    max-width: 100%;
+    margin-bottom: -4px;
+}
+#home-preston h2, #home-soda h2, #home-fish h2{
+    border-bottom: 3px solid #000000;
+    padding:1rem;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+#home-preston h3, #home-soda h3, #home-fish h3{
+    margin-bottom: 2rem;
+}
+#preston-content, #soda-content, #fish-content{
+    margin-bottom: 2rem;
+}
+main a{
+    text-decoration: none;
+    color: black;
+}
