@@ -362,6 +362,6 @@ button {
 #playa-content, #puerta-content {
     margin-bottom: 2rem;
 }
-.rental-info {
+.rental-info, .chart {
     display: block;
 }
