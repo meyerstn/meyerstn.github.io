@@ -334,11 +334,9 @@ button {
 }
 
 .playa-map {
-   
     text-align:center;
     padding: 2px 45px 2px 45px;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 10px;
+    
 }
 #home-playa, #home-puerta {
     margin-top: 2rem;
@@ -363,4 +361,7 @@ button {
 }
 #playa-content, #puerta-content {
     margin-bottom: 2rem;
+}
+.rental-info {
+    display: block;
 }

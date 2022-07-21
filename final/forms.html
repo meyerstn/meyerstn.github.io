@@ -63,12 +63,13 @@ button {
     right: 0;
     padding: .5em;
     display: none;
+    text-align: left;
         
 }
 .moveDown {
     margin-top: 3em;
 }
-        
+     
 h3, h5 {
   text-align: center;          
         }
@@ -80,12 +81,12 @@ h3, h5 {
     <div id="content">
       <header>
         <div class="logo-box">
-          <a href="index.html">
-            <img
-              src="https://cdn.glitch.com/ebfef8c8-b56b-4ba9-92d3-0f22d6820d92%2FRiverExpeditions.png?v=1610565448740"
-              alt="River logo"
-              width="450"
-          /></a>
+            <a href="index.html">
+                <img
+                  src="images/scoots.JPEG"
+                  alt="Scoots logo"
+                  width="450"
+              /></a>
         </div>
         <nav>
           <ul>
@@ -110,7 +111,35 @@ h3, h5 {
               <label for="mail">E-mail:</label>
               <input type="email" id="mail" name="user_email">
           </li>
+          <p>Which location would you like to use? </p>
+                <input type="radio" id="playa" name="location" value="playa">
+                <label for="playa">Playa del Carmen</label><br>
+                <input type="radio" id="puerta" name="location" value="puerta">
+                <label for="puerta">Puerta Maya</label><br>
+             
+              <br><br>
           <li>
+            <label for="rental-type">ATV Type:</label>
+            <input type="rental" id="rental-type" name="ATV">
+        </li>
+        <li>
+            <label for="age">Age:</label>
+            <input type="age" id="age" name="user_age">
+        </li>
+        <li>
+            <label for="payment"> Payment Type:</label>
+            <input type="name" id="payment" name="payment">
+        
+        </li>
+        <li>
+            <label for="cc_num">CC number:</label>
+            <input type="cc_num" id="cc_num" name="cc_num">
+        </li>
+        <li>
+            <label for="exp_ccv">Exp/CCV :</label>
+            <input type="exp_ccv" id="exp_ccv" name="exp_ccv">
+        </li>
+        <li>
              <label for="msg">Message:</label>
              <textarea id="msg" name="user_message"></textarea>
           </li>

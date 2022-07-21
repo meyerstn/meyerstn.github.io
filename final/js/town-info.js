@@ -1,5 +1,5 @@
 "use strict"
-const webJSON = "data/towns.json"
+const webJSON = "https://meyerstn.github.io/final/data/towns.json"
 async function populateCityInfo(webJSON){
     const response = await fetch(webJSON)
     const townsJSON = await response.json()
@@ -17,4 +17,4 @@ async function populateCityInfo(webJSON){
      document.getElementById("playa-img").setAttribute("alt", towns[6].name)
     document.getElementById("puerta-img").setAttribute("alt", towns[0].name)
  
-populateCityInfo(webJSON)
+populateCityInfo(webJSON) }
