@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Contact Us</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="css/styles.css" />
+      <style>
+      form {
+  margin: 0 auto;
+  width: 500px;
+  padding: 1em;
+  border: 1px solid #CCC;
+  border-radius: 1em;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+form li + li {
+  margin-top: 1em;
+}
+
+label {
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+  
+}
+
+input,
+textarea {
+  width: 300px;
+  box-sizing: border-box;
+  border: 1px solid #999;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #000;
+}
+
+textarea {
+  vertical-align: top;
+  height: 5em;
+}
+
+.button {
+  padding-left: 90px; 
+}
+
+button {
+  margin-left: .5em;
+}
+#feedback {
+    background-color: antiquewhite;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: .5em;
+    display: none;
+        
+}
+.moveDown {
+    margin-top: 3em;
+}
+        
+h3, h5 {
+  text-align: center;          
+        }
+    
+    </style>
+  </head>
+
+  <body>
+    <div id="content">
+      <header>
+        <div class="logo-box">
+          <a href="index.html">
+            <img
+              src="https://cdn.glitch.com/ebfef8c8-b56b-4ba9-92d3-0f22d6820d92%2FRiverExpeditions.png?v=1610565448740"
+              alt="River logo"
+              width="450"
+          /></a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="adventure-gallery.html">Adventure Gallery</a></li>
+            <li><a href="plan-a-visit.html">Plan A Visit</a></li>
+            <li><a href="forms.html">Forms</a></li>
+          </ul>
+        </nav>
+      </header>
+    <div id="feedback"></div>
+    <form action="form.html" method="post">
+      <h3>
+        Let us help you plan your next adventure:
+      </h3>
+      <ul> 
+           <li>
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="user_name">
+           </li>
+           <li>
+              <label for="mail">E-mail:</label>
+              <input type="email" id="mail" name="user_email">
+          </li>
+          <li>
+             <label for="msg">Message:</label>
+             <textarea id="msg" name="user_message"></textarea>
+          </li>
+          <li class="button">
+             <button type="submit">Send your message</button>
+          </li>     
+      
+           </ul>
+    <h5>
+      Adventure Awaits!
+      </h5>
+      </form>
+  <script src="js/scripts.js"></script> 
+
+<footer>
+    <p class="copyright">
+      &#169; 2022-Scoots-Tristan Meyers-WDD230 - <a href="resources.html">Resources</a>
+    </p>
+
+    <div class="social">
+      <a href="https://facebook.com/" target="_blank">
+        <img
+          src="images/facebook.png"
+          alt="facebook logo"
+          width="25"
+        />
+      </a>
+      <a href="https://twitter.com/" target="_blank">
+        <img
+          src="images/twitter.png"
+          alt="twitter logo"
+          width="25"
+        />
+      </a>
+      <a href="https://youtube.com/" target="_blank">
+        <img
+          src="images/youtube.png"
+          alt="youtube logo"
+          width="25"
+        />
+      </a>
+      <a href="https://pinterest.com/" target="_blank">
+        <img
+          src="images/pinterest.png"
+          alt="pinterest logo"
+          width="25"
+        />
+      </a>
+      <a href="https://googleplus.com/" target="_blank">
+        <img
+          src="images/googleplus.png"
+          alt="googleplus logo"
+          width="25"
+        />
+      </a>
+      <a href="https://instagram.com/" target="_blank">
+        <img
+          src="images/instagram.png"
+          alt="instragramlogo"
+          width="25"
+        />
+      </a>
+    </div>
+  </footer>
+    </div>
+  </body>
+</html>

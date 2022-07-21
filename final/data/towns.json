@@ -1,0 +1,23 @@
+{
+    "towns": [
+      {
+        "name": "Puerta Maya",
+        "photo": "puerta-maya.jpeg",
+        "motto": "Land of the Swallows.",
+        "yearFounded": 1848,
+        "currentPopulation": 912000,
+        "averageRainfall": 58.7,
+        "averageTemperature": 86
+      },
+      {
+        "name": "Playa del Carmen",
+        "photo": "play-del-carmen.jpeg",
+        "motto": "Welcome to the MUD side of Life",
+        "yearFounded": 1937,
+        "currentPopulation": 304942,
+        "averageRainfall": 45.5,
+        "averageTemperature": 85 
+        
+      }
+    ]
+  }
